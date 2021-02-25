@@ -25,29 +25,4 @@ const Burger = sequelize.define('burgers', {
     }
 });
 
-Burger
-    .sync({
-        logging: console.log,
-        force: true
-    })
-    .then(() => {
-        console.log('Connection to database established successfully');
-    })
-    .catch(err => {
-        console.error('Unable to connect to the database: ', err);
-    });
-
-
-// Test 
-const main = async () => {
-    const burgerList = await Burger.findAll({})
-    
-    console.log( `\n\n--------------------------` )
-    burgerList.forEach( burger =>{
-        console.log( `#${burger.id}: Burger: "${burger.burger_name}", Devour Status: ${burger.devoured}` );
-    });
-
-    sequelize.close()
-};
-
-main()
+module.exports = Burger;

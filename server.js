@@ -3,6 +3,10 @@ const exphbs = require('express-handlebars');
 
 const Burger = require('./config/connection');
 
+const app = express();
+
+const PORT = process.env.PORT || 3000;
+
 Burger
     .sync({
         logging: console.log,
@@ -10,7 +14,13 @@ Burger
     })
     .then(() => {
         console.log('Connection to database established successfully');
+        app.listen(PORT, () => {
+            console.log(`Server starts listening at port: ${PORT}....`);
+        })
     })
     .catch(err => {
         console.error('Unable to connect to the database: ', err);
     });
+
+
+

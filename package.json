@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Dragontalker/FullStack_BurgerHandler/issues"
   },
-  "homepage": "https://github.com/Dragontalker/FullStack_BurgerHandler#readme"
+  "homepage": "https://github.com/Dragontalker/FullStack_BurgerHandler#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }

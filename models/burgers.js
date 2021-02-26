@@ -21,12 +21,4 @@ const burger = {
     }
 };
 
-// Test:
-const testApp = async() => {
-    await burger.devourThis(4);
-    console.log(await burger.listAll());
-}
-
-testApp();
-
 module.exports = burger;

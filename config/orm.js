@@ -3,7 +3,8 @@ require('dotenv').config()
 
 const orm = {
     selectAll() {
-
+        const table = db.query('SELECT * FROM burgers');
+        return table;
     },
 
     insertOne() {
@@ -11,7 +12,7 @@ const orm = {
     },
 
     updateOne() {
-        
+
     }
 };
 

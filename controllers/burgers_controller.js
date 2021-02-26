@@ -6,7 +6,7 @@ const Burger = require('../models/burgers');
 router.get('/', (req, res) => {
     Burger.listAll()
         .then(burger => {
-            console.log(burger);
+            res.json(burger);
             // res.render('burgers', {burger: burger});
         })
         .catch(err => console.log(err));

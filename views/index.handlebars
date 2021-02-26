@@ -1,16 +1,14 @@
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
         <h1>Eat-Da-Burger!</h1>
-        <h4>Cook Yarselph a Burga! NOM NOM NOM!</h4>
     </div>
 </div>
 
 <div class="container">
     <form class="cook-burger-input">
-            <p>Cook Da Burger!</p>
             <input type="text" id="burger_name" class="form-control form-control-lg m-1">
             <div class="input-group-append">
-                <button id="submit" type="submit" class="btn btn-warning m-1"><i class="fas fa-hamburger"></i> Cook This Burger</button>
+                <button id="submit" type="submit" class="btn btn-warning m-1"><i class="fas fa-hamburger"></i> Cook This Burger!</button>
             </div>
     </form>
 </div>
@@ -22,7 +20,7 @@
             {{#each burgers}}
             {{#unless devoured}}
                 <div class="row border">
-                    {{burger_name}}
+                    {{burger_name}}<button class="btn btn-warning mt-2" data-id={{ id }}><i class="fas fa-utensils"></i> Devour Now!</button>
                 </div>
             {{/unless}}
             {{/each}}
@@ -32,7 +30,7 @@
             <h2>Yummy!</h2>
             {{#each burgers}}
             {{#if devoured}}
-                <div class="row border">
+                <div class="row border devoured">
                     {{burger_name}}
                 </div>
             {{/if}}

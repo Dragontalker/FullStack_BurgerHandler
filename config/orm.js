@@ -2,13 +2,15 @@ const db = require('./connection')('burgers_db', process.env.SQL_PASSWORD);
 require('dotenv').config()
 
 const orm = {
-    selectAll() {
-        const table = db.query('SELECT * FROM burgers');
+    async selectAll() {
+        const query = 'SELECT * FROM burgers';
+        const table = await db.query(query);
         return table;
     },
 
-    insertOne() {
-
+    async insertOne(newBurger) {
+        const query = `INSERT INTO burgers (burger_name, devoured) VALUES ('${newBurger}, false)'`;
+        await db.query(query);
     },
 
     updateOne() {

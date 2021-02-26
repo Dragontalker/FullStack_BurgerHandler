@@ -11,8 +11,7 @@ const burger = {
     cookNew: async function(burgerName) {
         const vars = '(burger_name, devoured)';
         const data = `('${burgerName}', false)`;
-        const query = `INSERT INTO ${this.name} ${vars} VALUES ${data}`;
-        console.log(query);
+        await orm.insertOne(this.name, vars, data);
     },
 
     devourThis: async function(burgerID) {
@@ -24,8 +23,13 @@ const burger = {
 };
 
 // Test:
-burger.listAll();
-burger.cookNew('BigMac');
+const testApp = async() => {
+    await burger.cookNew('Angus');
+    console.log(await burger.listAll());
+}
+
+testApp();
+
 burger.devourThis(3);
 
 module.exports = burger;

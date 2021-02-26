@@ -17,19 +17,16 @@ const burger = {
     devourThis: async function(burgerID) {
         const change = 'devoured = true';
         const index = `id = ${burgerID}`;
-        const query = `UPDATE ${this.name} SET ${change} WHERE ${index}`;
-        console.log(query);
+        await orm.updateOne(this.name, change, index);
     }
 };
 
 // Test:
 const testApp = async() => {
-    await burger.cookNew('Angus');
+    await burger.devourThis(4);
     console.log(await burger.listAll());
 }
 
 testApp();
-
-burger.devourThis(3);
 
 module.exports = burger;

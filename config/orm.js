@@ -13,8 +13,9 @@ const orm = {
         await db.query(query);
     },
 
-    updateOne() {
-
+    async updateOne(burgerID) {
+        const query = `UPDATE burgers SET devoured = true WHERE id = ${burgerID}`;
+        await db.query(query);
     }
 };
 

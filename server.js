@@ -17,20 +17,6 @@ app.use('/burgers', require('./controllers/burgers_controller'));
 
 const PORT = process.env.PORT || 3000;
 
-Burger
-    .sync({
-        logging: console.log,
-        force: true
-    })
-    .then(() => {
-        console.log('Connection to database established successfully');
-        app.listen(PORT, () => {
-            console.log(`Server starts listening at port: ${PORT}....`);
-        })
-    })
-    .catch(err => {
-        console.error('Unable to connect to the database: ', err);
-    });
-
-
-
+app.listen(PORT, () => {
+    console.log(`Server starts listening at port: ${PORT}....`);
+});

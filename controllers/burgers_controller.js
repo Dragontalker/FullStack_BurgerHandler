@@ -15,7 +15,11 @@ router.post('/api/cook', (req, res) => {
         .catch(err => console.log(err));
 });
 
-// Test
+router.put('/api/devour', (req, res) => {
+    Burger.devourThis(req.body.id)
+        .then(burger => console.log(`Successfuly devoured ${req.body.id}!`))
+        .catch(err => console.log(err));
+});
 
 
 

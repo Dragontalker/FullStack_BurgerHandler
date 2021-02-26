@@ -5,12 +5,16 @@ const Burger = require('../models/burgers');
 // Get burger list
 router.get('/', (req, res) => {
     Burger.listAll()
-        .then(burger => {
-            res.json(burger);
-            // res.render('burgers', {burger: burger});
-        })
+        .then(burger => res.json(burger))
         .catch(err => console.log(err));
 });
+
+router.post('/api/cook', (req, res) => {
+    Burger.cookNew(req.body.burger_name)
+        .then(burger => res.json(burger))
+        .catch(err => console.log(err))
+});
+
 
 // Add a BigMac
 // router.get('/bigmac', (req, res) => {

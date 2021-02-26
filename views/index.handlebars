@@ -21,7 +21,7 @@
             <h2>Devour these burgers now!</h2>
             {{#each burgers}}
             {{#unless devoured}}
-                <div class="row">
+                <div class="row border">
                     {{burger_name}}
                 </div>
             {{/unless}}
@@ -32,7 +32,7 @@
             <h2>Yummy!</h2>
             {{#each burgers}}
             {{#if devoured}}
-                <div class="row">
+                <div class="row border">
                     {{burger_name}}
                 </div>
             {{/if}}

@@ -2,3 +2,10 @@ body {
     background-color: #DA291C;
     color: #FFC72C;
 }
+
+.border {
+    border: 1px solid #FFC72C;
+    border-radius: 3px;
+    padding: 10px;
+    margin: 10px;
+}

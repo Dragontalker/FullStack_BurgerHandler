@@ -1,11 +1,8 @@
-const Sequelize = require('sequelize');
-require('dotenv').config()
+const myseql = require('mysql');
 
-const sequelize = new Sequelize('burgers_db', 'root', process.env.SQL_PASSWORD, {
-    host: 'localhost',
-    port: 3306,
-    dialect: 'mysql',
-    pool: {max: 5, min: 0, idel: 10000}
-});
+class Database {
+    constructor(config) {
+        this.connection = mysql.createConnection(config);
+    }
+};
 
-module.exports = sequelize;

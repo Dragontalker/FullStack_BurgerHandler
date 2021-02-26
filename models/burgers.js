@@ -4,8 +4,8 @@ const burger = {
     name: 'burgers',
 
     listAll: async function() {
-        const query = `SELECT * FROM ${this.name}`;
-        console.log(query);
+        const result = await orm.selectAll(this.name);
+        return result;
     },
 
     cookNew: async function(burgerName) {

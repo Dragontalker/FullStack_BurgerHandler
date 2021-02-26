@@ -40,3 +40,5 @@ const connectDB = (dbName, dbPassword) => {
     })
     return db;
 };
+
+module.exports = connectDB;

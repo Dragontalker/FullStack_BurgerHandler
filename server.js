@@ -5,6 +5,10 @@ const Burger = require('./config/connection');
 
 const app = express();
 
+// Handlebars
+app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
+app.set('view engine', 'handlebars');
+
 app.use('/burgers', require('./controllers/burgers_controller'));
 
 const PORT = process.env.PORT || 3000;

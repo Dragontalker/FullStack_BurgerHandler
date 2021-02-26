@@ -1,9 +1,7 @@
-const Sequelize = require('sequelize');
-const db = require('../config/connection');
+const orm = require('../config/orm');
 
-const Burger = db.define('burgers', {
-    burger_name: Sequelize.STRING,
-    devoured: Sequelize.BOOLEAN
-});
+const burger = {
 
-module.exports = Burger;
+};
+
+module.exports = burger;

@@ -8,25 +8,37 @@
 <div class="container">
     <form class="cook-burger-input">
             <p>Cook Da Burger!</p>
-            <input type="text" id="burger_name" class="form-control form-control-lg m-2">
+            <input type="text" id="burger_name" class="form-control form-control-lg m-1">
             <div class="input-group-append">
-                <button id="submit" type="submit" class="btn btn-danger m-2"><i class="fas fa-hamburger"></i> Add New Burger</button>
+                <button id="submit" type="submit" class="btn btn-warning m-1"><i class="fas fa-hamburger"></i> Cook This Burger</button>
             </div>
     </form>
 </div>
 
 <div class="container">
-    {{#each burgers}}
-    {{#unless devoured}}
-        {{burger_name}}
-    {{/unless}}
-    {{/each}}
+    <div class="row">
+        <div class="col-sm-12 col-md-6">
+            <h2>Devour these burgers now!</h2>
+            {{#each burgers}}
+            {{#unless devoured}}
+                <div class="row">
+                    {{burger_name}}
+                </div>
+            {{/unless}}
+            {{/each}}
+        </div>
+
+        <div class="col-sm-12 col-md-6">
+            <h2>Yummy!</h2>
+            {{#each burgers}}
+            {{#if devoured}}
+                <div class="row">
+                    {{burger_name}}
+                </div>
+            {{/if}}
+            {{/each}}
+        </div>
+    </div>
 </div>
 
-<div class="container">
-    {{#each burgers}}
-    {{#if devoured}}
-        {{burger_name}}
-    {{/if}}
-    {{/each}}
-</div>
+

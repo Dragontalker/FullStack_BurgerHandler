@@ -7,8 +7,7 @@ const Burger = require('../models/burgers');
 router.get('/', (req, res) => {
     Burger.findAll()
         .then(burger => {
-            console.log(burger);
-            res.sendStatus(200);
+            res.render('burgers', {burger: burger});
         })
         .catch(err => console.log(err));
 });

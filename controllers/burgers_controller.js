@@ -2,9 +2,13 @@ const express = require('express');
 const router = express.Router();
 const Burger = require('../models/burgers');
 
-router.get('/api', (req, res) => {
+router.get('/', (req, res) => {
     Burger.listAll()
-        .then(burger => res.json(burger))
+        .then(data => {
+            const hbsObj = { burgers: data };
+            console.log(`Successfully get all the burgers: ${hbsObj}`);
+            res.render('index', hbsObj);
+        })
         .catch(err => console.log(err));
 });
 

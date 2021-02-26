@@ -1,4 +1,4 @@
-const myseql = require('mysql');
+const mysql = require('mysql');
 
 class Database {
     constructor(config) {

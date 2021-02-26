@@ -3,7 +3,7 @@ const orm = require('../config/orm');
 const burger = {
     name: 'burgers',
 
-    listAll: async () => {
+    listAll: async function() {
         const query = `SELECT * FROM ${this.name}`;
         console.log(query);
     },
@@ -16,5 +16,8 @@ const burger = {
 
     }
 };
+
+// Test:
+burger.listAll();
 
 module.exports = burger;

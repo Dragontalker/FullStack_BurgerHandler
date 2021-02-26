@@ -5,6 +5,8 @@ const Burger = require('./config/connection');
 
 const app = express();
 
+app.use('/burgers', require('./controllers/burgers_controller'));
+
 const PORT = process.env.PORT || 3000;
 
 Burger

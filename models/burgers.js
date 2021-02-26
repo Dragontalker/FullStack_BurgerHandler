@@ -15,13 +15,17 @@ const burger = {
         console.log(query);
     },
 
-    devourThis: async (burgerID) => {
-
+    devourThis: async function(burgerID) {
+        const change = 'devoured = true';
+        const index = `id = ${burgerID}`;
+        const query = `UPDATE ${this.name} SET ${change} WHERE ${index}`;
+        console.log(query);
     }
 };
 
 // Test:
 burger.listAll();
 burger.cookNew('BigMac');
+burger.devourThis(3);
 
 module.exports = burger;

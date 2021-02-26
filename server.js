@@ -13,7 +13,10 @@ app.set('view engine', 'handlebars');
 // Set static folder
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/burgers', require('./controllers/burgers_controller'));
+// Set json 
+app.use(express.json());
+
+app.use('/', require('./controllers/burgers_controller'));
 
 const PORT = process.env.PORT || 3000;
 

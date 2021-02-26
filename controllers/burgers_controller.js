@@ -3,7 +3,7 @@ const router = express.Router();
 const Burger = require('../models/burgers');
 
 // Get burger list
-router.get('/', (req, res) => {
+router.get('/api', (req, res) => {
     Burger.listAll()
         .then(burger => res.json(burger))
         .catch(err => console.log(err));
@@ -11,9 +11,13 @@ router.get('/', (req, res) => {
 
 router.post('/api/cook', (req, res) => {
     Burger.cookNew(req.body.burger_name)
-        .then(burger => res.json(burger))
-        .catch(err => console.log(err))
+        .then(burger => console.log(`Successfuly cooked ${req.body.burger_name}!`))
+        .catch(err => console.log(err));
 });
+
+// Test
+
+
 
 
 // Add a BigMac

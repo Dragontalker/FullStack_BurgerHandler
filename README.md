@@ -17,3 +17,13 @@ https://dragontalker-eat-da-burger.herokuapp.com/
 ### Description
 
 Eat-Da-Burger! is a burger logger built with MySQL, Node, Express, Handlebars and a homemade ORM (yum!). Any burger added by the user will be listed in the left, and moved to the list on the right once the devour button is clicked. The purpose of this project is to demonstrate the application of the MVC design pattern and usage of Express handlebars rending.
+
+### Installation
+To use this application, type this command in console to install the require packages:
+
+```bash
+npm install
+```
+
+For MySQL database, build the local database using the `schema.sql` and `seeds.sql` under `db` directory.
+

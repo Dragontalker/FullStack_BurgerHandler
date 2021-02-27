@@ -19,8 +19,8 @@
             <h2>Devour these burgers now!</h2>
             {{#each burgers}}
             {{#unless devoured}}
-                <div class="row border">
-                    {{burger_name}}<button class="btn btn-warning mt-2" data-id={{ id }}><i class="fas fa-utensils"></i> Devour Now!</button>
+                <div id="devour" class="row border">
+                    {{burger_name}}<a href='/api/devour/{{id}}' class="btn btn-warning mt-2"><i class="fas fa-utensils"></i> Devour Now!</a>
                 </div>
             {{/unless}}
             {{/each}}

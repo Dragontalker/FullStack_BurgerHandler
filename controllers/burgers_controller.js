@@ -6,7 +6,7 @@ router.get('/', (req, res) => {
     Burger.listAll()
         .then(data => {
             const hbsObj = { burgers: data };
-            console.log(`Successfully get all the burgers: ${hbsObj}`);
+            console.log(`Successfully get all the burgers.`);
             res.render('index', hbsObj);
         })
         .catch(err => console.log(err));
@@ -18,10 +18,11 @@ router.post('/api/cook', (req, res) => {
         .catch(err => console.log(err));
 });
 
-router.put('/api/devour', (req, res) => {
-    Burger.devourThis(req.body.id)
-        .then(burger => console.log(`Successfuly devoured ${req.body.id}!`))
-        .catch(err => console.log(err));
+router.get('/api/devour/:id', (req, res) => {
+    Burger.devourThis(req.params.id)
+         .then(burger => console.log(`Successfuly devoured ${req.body.id}!`))
+         .catch(err => console.log(err));
+    res.redirect('/');
 });
 
 module.exports = router;

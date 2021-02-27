@@ -10,16 +10,4 @@ $(document).ready(() => {
             location.reload();
         }).catch(error => console.log(error));
     });
-
-    $('.devour').on('click', () => {
-        const burgerID = $(this).data('id');
-        const index = { id: burgerID };
-        $.ajax('api/devour', {
-            type: 'PUT',
-            data: index
-        }).then(() => {
-            console.log(`Devoured the burger with id ${burgerID}!`);
-        }).catch(error => console.log(error));
-    });
-
 });
